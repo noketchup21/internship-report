@@ -1,5 +1,5 @@
 +++
-title = "Dọn dẹp tài nguyên  "
+title = "Tự đánh giá bản thân  "
 date = 2021
 weight = 6
 chapter = false

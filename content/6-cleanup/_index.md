@@ -1,5 +1,5 @@
 +++
-title = "Clean up resources"
+title = "Self-assessment"
 date = 2022
 weight = 6
 chapter = false

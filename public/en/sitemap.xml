@@ -54,19 +54,6 @@
                 href="//localhost:1313/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/"
                 />
   </url><url>
-    <loc>//localhost:1313/1-introduce/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/1-introduce/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/1-introduce/"
-                />
-  </url><url>
     <loc>//localhost:1313/2-prerequiste/2.1-createec2/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -104,6 +91,71 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/4-s3log/4.1-updateiamrole/"
+                />
+  </url><url>
+    <loc>//localhost:1313/1-introduce/week1/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/week1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/week1/"
+                />
+  </url><url>
+    <loc>//localhost:1313/1-introduce/week2/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/week2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/week2/"
+                />
+  </url><url>
+    <loc>//localhost:1313/1-introduce/week3/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/week3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/week3/"
+                />
+  </url><url>
+    <loc>//localhost:1313/1-introduce/week4/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/week4/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/week4/"
+                />
+  </url><url>
+    <loc>//localhost:1313/1-introduce/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/"
                 />
   </url><url>
     <loc>//localhost:1313/3-accessibilitytoinstances/3.2-private-instance/</loc>
@@ -197,19 +249,6 @@
                 href="//localhost:1313/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/3-accessibilitytoinstances/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/3-accessibilitytoinstances/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/3-accessibilitytoinstances/"
-                />
-  </url><url>
     <loc>//localhost:1313/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -260,6 +299,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/4-s3log/4.3-creategwes3/"
+                />
+  </url><url>
+    <loc>//localhost:1313/3-accessibilitytoinstances/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/3-accessibilitytoinstances/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/3-accessibilitytoinstances/"
                 />
   </url><url>
     <loc>//localhost:1313/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/</loc>
@@ -351,6 +403,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/6-cleanup/"
+                />
+  </url><url>
+    <loc>//localhost:1313/6-cleanup-copy/</loc>
+    <lastmod>1970-01-01T07:33:42+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-cleanup-copy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-cleanup-copy/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>

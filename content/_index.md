@@ -4,13 +4,47 @@ date :  "2025-09-09"
 weight : 1 
 chapter : false
 ---
-# Work with Amazon System Manager - Session Manager
+<div align="center">
 
-### Overall
- In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections. 
+# INTERNSHIP REPORT
 
-![ConnectPrivate](/images/arc-log.png) 
+</div>
+
+## Student Information
+
+**Full Name:** Lương Nguyễn Duy Khang  
+
+**Phone Number:** 0931984914  
+
+**Email:** lndkhang278@gmail.com  
+
+**University:** FPT University  
+
+**Major:** Software Engineer 
+
+**Class:**   
+
+**Internship Company:** Amazon Web Services Vietnam Co., Ltd.  
+
+**Internship Position:** FCJ Cloud Intern  
+
+**Internship Duration:** From 12/08/2025 to 12/11/2025  
+
+---
+
+![Ảnh avatar của bạn](/images/hinhthe.png)
+
+---
+
+## Report Content
+
+1. [Worklog](1-introduce/)
+2. [Proposal](2-prerequiste/)
+3. [Translated Blogs](#)
+4. [Events Participated](#)
+5. [Workshop](#)
+6. [Self-evaluation](#)
+7. [Sharing and Feedback](#)
 
 ### Content
  1. [Introduction ](1-introduce/)

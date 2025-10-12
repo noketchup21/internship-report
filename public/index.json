@@ -39,7 +39,7 @@
 	"title": "Session Management",
 	"tags": [],
 	"description": "",
-	"content": "Work with Amazon System Manager - Session Manager Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon System Manager - Session Manager . Perform creating public and private instance connections.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
+	"content": "\rINTERNSHIP REPORT Student Information Full Name: Lương Nguyễn Duy Khang\nPhone Number: 0931984914\nEmail: lndkhang278@gmail.com\nUniversity: FPT University\nMajor: Software Engineer\nClass:\nInternship Company: Amazon Web Services Vietnam Co., Ltd.\nInternship Position: FCJ Cloud Intern\nInternship Duration: From 12/08/2025 to 12/11/2025\nReport Content Worklog Proposal Translated Blogs Events Participated Workshop Self-evaluation Sharing and Feedback Content Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
 },
 {
 	"uri": "//localhost:1313/4-s3log/4.1-updateiamrole/",
@@ -49,11 +49,46 @@
 	"content": "For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.\nUpdate IAM Role Go to IAM service management console Click Roles. In the search box, enter SSM. Click on the SSM-Role role. Click Attach policies. In the Search box enter S3. Click the policy AmazonS3FullAccess. Click Attach policy. In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy AmazonS3FullAccess for convenience.\nNext, we will proceed to create an S3 bucket to store session logs.\n"
 },
 {
+	"uri": "//localhost:1313/1-introduce/week1/",
+	"title": "WEEK 1",
+	"tags": [],
+	"description": "",
+	"content": "WORKLOG Week 1 objectives: Connected and formed groups with students at FCJ Proposed ideas about final project Studied and did labs on FCJ websites Understood basic concepts of cloud and AWS services Task carried out this week Day Task Start Date Completion Date Reference Material 2 - Get used to and take notes of First Cloud Journey tasks for students, its rules and learning materials 09/08/2025 09/08/2025 3 - Self study about cloud - Explore AWS services 09/09/2025 09/09/2025 Link 4 - Create AWS Free Tier account - Learn how to manage cost with AWS Budgets Do: + Create AWS account + Create different types of budgets 09/10/2025 09/10/2025 Link 5 - Study about EC2 - SSH connection methods to EC2 - Learn about Elastic IP - Propose ideas about final project - Study about VPC 09/11/2025 09/11/2025 Link 6 Do: + Create security groups + Create subnets + Launch an EC2 instance + Connect via SSH + Attach an EBS volume - Join a meeting and choose one idea for final project 09/12/2025 09/12/2025 Link Week 1 Achievements Understood what AWS is and learned the basic service groups:\nCompute Storage Networking Database Successfully created and configured an AWS Free Tier account.\nBecame familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.\nInstalled and configured AWS CLI on the computer, including:\nAccess Key Secret Key Default Region Explored AWS services through self-study and documentation to understand their usage.\nLearned how to manage costs effectively with AWS Budgets, including creating different types of budgets.\nGained hands-on experience with EC2 by studying its features, connection methods (SSH), and Elastic IP.\nLearned the basics of VPC and networking setup in AWS.\nPracticed creating security groups, subnets, and launching an EC2 instance.\nSuccessfully connected to an EC2 instance via SSH and attached an EBS volume.\nWorked collaboratively to propose and select one idea for the final project.\n"
+},
+{
+	"uri": "//localhost:1313/1-introduce/week2/",
+	"title": "WEEK 2",
+	"tags": [],
+	"description": "",
+	"content": "WORKLOG Week 2 Objectives Learn and practice AWS storage and database services (Amazon S3, Amazon RDS). Get familiar with and self-study Spring Boot to prepare for backend development. Gain knowledge of system monitoring with Amazon CloudWatch. Learn and practice deployment with Amazon Lightsail and Lightsail Container. Continue self-studying PostgreSQL to integrate with Spring Boot. Explore resource scaling with Amazon EC2 Auto Scaling. Tasks Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Study Amazon S3 and Amazon RDS\n- Do: Amazon S3 labs, Amazon RDS labs\n- Self-study Spring Boot 09/15/2025 09/15/2025 AWS Study Group 3 - Self-study Spring Boot\n- Study Amazon CloudWatch 09/16/2025 09/16/2025 AWS Study Group 4 - Self-study Spring Boot and PostgreSQL\n- Do: Amazon CloudWatch labs 09/17/2025 09/17/2025 AWS Study Group 5 - Self-study Spring Boot and PostgreSQL\n- Study Amazon Lightsail and Lightsail Container\n- Do: Lightsail labs, Lightsail Container labs 09/18/2025 09/18/2025 AWS Study Group 6 - Self-study Spring Boot and PostgreSQL\n- Study Amazon EC2 Auto Scaling 09/19/2025 09/19/2025 AWS Study Group Week 2 Achievements Completed Amazon S3 labs and learned bucket creation, upload/download, and access management. Completed Amazon RDS labs, created databases, connected, and managed data. Self-studied and understood the basics of Spring Boot (project structure, dependencies, basic API creation). Learned about Amazon CloudWatch and practiced labs for monitoring, metrics, and alarms. Learned PostgreSQL and understood basic integration with Spring Boot. Completed Amazon Lightsail and Lightsail Container labs, deployed sample apps, and managed containers. Understood Amazon EC2 Auto Scaling mechanism and how instances scale automatically based on demand. "
+},
+{
+	"uri": "//localhost:1313/1-introduce/week3/",
+	"title": "WEEK 3",
+	"tags": [],
+	"description": "",
+	"content": "WORKLOG Week 3 Objectives Set up the base project for backend development. Learn and practice Amazon Route 53. Continue learning about Amazon EC2 Auto Scaling. Develop core authentication features: register, login, and JWT services. Study and practice with Amazon CLI. Collaborate with the team to review project progress. Tasks Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Set up base project for development\n- Study about Amazon Route 53\n- Do: Amazon EC2 Auto Scaling labs 09/22/2025 09/22/2025 AWS Study Group 3 - Start developing register feature\n- Do: Amazon Route 53 labs 09/23/2025 09/23/2025 AWS Study Group 4 - Continue developing register feature\n- Study about Amazon CLI 09/24/2025 09/24/2025 AWS Study Group 5 - Team meeting about project progress\n- Complete register and start developing login feature and JWT services 09/25/2025 09/25/2025 AWS Study Group 6 - Finish login and JWT services\n- Do: Amazon CLI labs 09/26/2025 09/26/2025 AWS Study Group Week 3 Achievements Successfully set up the base project structure for development. Completed labs on Amazon EC2 Auto Scaling and Amazon Route 53, gaining knowledge in scaling and DNS management. Implemented user registration feature and later expanded with login and JWT-based authentication. Practiced using Amazon CLI and completed related labs. Held a team meeting to discuss project progress and align development tasks. Completed core authentication flow (register + login + JWT services), providing a foundation for secure backend development. "
+},
+{
+	"uri": "//localhost:1313/1-introduce/week4/",
+	"title": "WEEK 4",
+	"tags": [],
+	"description": "",
+	"content": "WORKLOG Week 4 Objectives Fix and optimize existing authentication features (register/login). Learn and integrate MoMo payment gateway into the project. Participate in team meetings to review progress and discuss project proposal. Study and practice with Amazon DynamoDB. Learn how to use Cloudinary for image uploads in Spring Boot. Complete labs on Amazon DynamoDB and integrate Cloudinary into the project. Tasks Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Fix bugs in register/login services\n- Study about MoMo services and how to integrate in Spring Boot 09/29/2025 09/29/2025 AWS Study Group 3 - Team meeting about project progress\n- Develop and integrate MoMo payment in project 09/30/2025 09/30/2025 4 - Team meeting to discuss project proposal and assign different tasks for members\n- Finish MoMo payment integration 10/01/2025 10/01/2025 5 - Study about DynamoDB\n- Learn about Cloudinary and how to implement it for image uploads in Spring Boot 10/02/2025 10/02/2025 AWS Study Group 6 - Do labs about DynamoDB\n- Integrate Cloudinary in the project 10/03/2025 10/03/2025 AWS Study Group Week 4 Achievements Fixed and improved register/login services for better stability. Successfully learned and integrated MoMo payment gateway into the backend project. Participated in team meetings to review progress and coordinate new development tasks. Gained hands-on experience with Amazon DynamoDB through labs and practice. Learned how to use Cloudinary for efficient image storage and integrated it into the project. Strengthened overall backend functionality with payment and media upload features, preparing the system for future expansion. "
+},
+{
+	"uri": "//localhost:1313/1-introduce/week5/",
+	"title": "WEEK 5",
+	"tags": [],
+	"description": "",
+	"content": "WORKLOG Week 5 Objectives Learn and practice Amazon ElastiCache to improve application performance through caching. Study and implement Google OAuth 2 for multi-login authentication options. Research and understand Amazon CloudFront and its use for content delivery and website acceleration. Complete labs for ElastiCache and CloudFront to gain practical experience. Study Edge Computing concepts with Amazon CloudFront and Lambda@Edge. Research and integrate MoMo IPN (Instant Payment Notification) to verify payment status. Learn and practice integrating Amazon S3 for file storage, upload, and download management. Tasks Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Study about Amazon ElastiCache\n- Learn about Google OAuth 2 to integrate multiple login options in the project 10/06/2025 10/06/2025 AWS Study Group 3 - Study and research about Amazon CloudFront\n- Develop and integrate OAuth 2 into the project 10/07/2025 10/07/2025 AWS Study Group 4 - Do labs about Amazon ElastiCache and Amazon CloudFront\n- Finish integrating OAuth 2 10/08/2025 10/08/2025 AWS Study Group 5 - Study about Edge Computing with Amazon CloudFront and Lambda@Edge\n- Research about MoMo IPN to verify paid status 10/09/2025 10/09/2025 AWS Study Group 6 - Integrate MoMo IPN into project\n- Learn about integrating Amazon S3 to store, upload, and download files 10/10/2025 10/10/2025 AWS Study Group Week 5 Achievements Gained understanding of Amazon ElastiCache and its benefits for caching and performance optimization. Successfully implemented Google OAuth 2 for multiple login options, enhancing authentication flexibility. Completed labs and research on Amazon CloudFront, learning about CDN setup and content distribution. Practiced Edge Computing using Lambda@Edge to handle requests closer to users for lower latency. Integrated MoMo IPN into the project to automatically verify and confirm successful transactions. Learned and applied Amazon S3 integration for secure file storage, upload, and download functionality. Improved project scalability, authentication, and reliability through practical use of multiple AWS services. "
+},
+{
 	"uri": "//localhost:1313/1-introduce/",
 	"title": "Worklog",
 	"tags": [],
 	"description": "",
-	"content": "Session Manager is a function within the AWS System Manager service, SSM provides verifiable and secure version management without opening incoming ports, without Bastion Host or SSH key management. Session Manager also makes it easy to comply with corporate policies that require controlled access to instances, strict security practices, and fully auditable logs with instance access details, while still providing end-users with one-click cross-platform access to your managed instances.\nBy using Session Manager, you get the following advantages that traditional methods do not have:\nNo need to open port 22 for SSH protocol, so it is more secure. Can be configured so that the connection does not need to go outside the internet, so it is more secure. No need to manage the server\u0026rsquo;s private key to connect to SSH. Centralized management of users using AWS IAM. Access to the server easily and simply with one click. Faster access time than traditional methods like SSH Support many different operating systems such as Linux, Windows, MacOS Log the connection sessions and commands executed while connecting to the server. With the above advantages, you can use Session Manager instead of using Bastion host technique to save us time and money when managing Bastion server.\n"
+	"content": " Week 1: Getting familiar with AWS and basic AWS services. Week 2: Learning core AWS services (S3, RDS, CloudWatch, Lightsail, EC2 Auto Scaling) and practicing backend setup with Spring Boot and PostgreSQL. Week 3: Setting up the backend project, implementing authentication (register, login, JWT), and practicing with Route 53, EC2 Auto Scaling, and AWS CLI. Week 4: Improving backend authentication and integrating MoMo payment and Cloudinary while practicing core AWS services. Week 5: Exploring advanced AWS services and integrating OAuth 2, MoMo IPN, and Amazon S3 into the project. Week 6: Doing task E… Week 7: Doing task G… Week 8: Doing task H… Week 9: Doing task I… Week 10: Doing task L… Week 11: Doing task M… Week 12: Doing task N… "
 },
 {
 	"uri": "//localhost:1313/3-accessibilitytoinstances/3.2-private-instance/",
@@ -99,17 +134,10 @@
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/",
-	"title": "Preparation ",
+	"title": "Proposal ",
 	"tags": [],
 	"description": "",
-	"content": "\rYou need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.\nContent Prepare VPC and EC2 Create IAM Role "
-},
-{
-	"uri": "//localhost:1313/3-accessibilitytoinstances/",
-	"title": "Connect to EC2 servers",
-	"tags": [],
-	"description": "",
-	"content": "In this step, we will connect to our EC2 servers, located in both the public and private subnets.\nContent 3.1. Connect to EC2 Public Server 3.2. Cconnect to EC2 Private Server\n"
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/",
@@ -140,6 +168,13 @@
 	"content": " Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter S3GW. In the Service Category section, click AWS services. In the search box enter S3, then select com.amazonaws.[region].s3 In the Services section, select com.amazonaws.[region].s3 with the Type of Gateway. In the VPC section, select Lab VPC. In the Route tables section, select both route tables. Scroll down, click Create endpoint. The next step is to configure Session Manager to store session logs to the S3 bucket we created.\n"
 },
 {
+	"uri": "//localhost:1313/3-accessibilitytoinstances/",
+	"title": "Translated blogs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "//localhost:1313/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/",
 	"title": "Create security groups",
 	"tags": [],
@@ -148,10 +183,10 @@
 },
 {
 	"uri": "//localhost:1313/4-s3log/",
-	"title": "Manage session logs",
+	"title": "Events participated",
 	"tags": [],
 	"description": "",
-	"content": "With Session Manager, we can view the history of connections to instances through Session history. However, we have not seen the details of the commands used in a session.\nIn this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.\nContent: Update IAM Role Create S3 Bucket Create S3 Gateway endpoint Configure Session logs "
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/4-s3log/4.4-configsessionlogs/",
@@ -169,7 +204,7 @@
 },
 {
 	"uri": "//localhost:1313/5-portfwd/",
-	"title": "Port Forwarding",
+	"title": "Workshop",
 	"tags": [],
 	"description": "",
 	"content": "\rPort Forwarding is a useful way to redirect network traffic from one IP address - Port to another IP address - Port. With Port Forwarding we can access an EC2 instance located in the private subnet from our workstation.\nWe will configure Port Forwarding for the RDP connection between our machine and Private Windows Instance located in the private subnet we created for this exercise.\nCreate IAM user with permission to connect SSM Go to IAM service management console Click Users , then click Add users. At the Add user page. In the User name field, enter Portfwd. Click on Access key - Programmatic access. Click Next: Permissions. Click Attach existing policies directly.\nIn the search box, enter ssm. Click on AmazonSSMFullAccess. Click Next: Tags, click Next: Reviews. Click Create user. Save Access key ID and Secret access key information to perform AWS CLI configuration.\nInstall and Configure AWS CLI and Session Manager Plugin To perform this hands-on, make sure your workstation has AWS CLI and Session Manager Plugin installed -manager-working-with-install-plugin.html)\nMore hands-on tutorials on installing and configuring the AWS CLI can be found here.\nWith Windows, when extracting the Session Manager Plugin installation folder, run the install.bat file with Administrator permission to perform the installation.\nImplement Portforwarding Run the command below in Command Prompt on your machine to configure Port Forwarding. aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region (your region) Windows Private Instance Instance ID information can be found when you view the EC2 Windows Private Instance server details.\nExample command: C:\\Windows\\system32\u0026gt;aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region ap-southeast-1 If your command gives an error like below: SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\nProve that you have not successfully installed the Session Manager Plugin. You may need to relaunch Command Prompt after installing Session Manager Plugin.\nConnect to the Private Windows Instance you created using the Remote Desktop tool on your workstation. In the Computer section: enter localhost:9999. Return to the administration interface of the System Manager - Session Manager service. Click tab Session history. We will see session logs with Document name AWS-StartPortForwardingSession. Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.\n"
@@ -183,7 +218,14 @@
 },
 {
 	"uri": "//localhost:1313/6-cleanup/",
-	"title": "Clean up resources",
+	"title": "Self-assessment",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete the resources we created in this exercise.\nDelete EC2 instance Go to EC2 service management console\nClick Instances. Select both Public Linux Instance and Private Windows Instance instances. Click Instance state. Click Terminate instance, then click Terminate to confirm. Go to IAM service management console\nClick Roles. In the search box, enter SSM. Click to select SSM-Role. Click Delete, then enter the role name SSM-Role and click Delete to delete the role. Click Users. Click on user Portfwd. Click Delete, then enter the user name Portfwd and click Delete to delete the user. Delete S3 bucket Access System Manager - Session Manager service management console.\nClick the Preferences tab. Click Edit. Scroll down. In the section S3 logging. Uncheck Enable to disable logging. Scroll down. Click Save. Go to S3 service management console\nClick on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 ) Click Empty. Enter permanently delete, then click Empty to proceed to delete the object in the bucket. Click Exit. After deleting all objects in the bucket, click Delete\nEnter the name of the S3 bucket, then click Delete bucket to proceed with deleting the S3 bucket. Delete VPC Endpoints Go to VPC service management console Click Endpoints. Select the 4 endpoints we created for the lab including SSM, SSMMESSAGES, EC2MESSAGES, S3GW. Click Actions. Click Delete VPC endpoints. In the confirm box, enter delete.\nClick Delete to proceed with deleting endpoints. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.\nDelete VPC Go to VPC service management console\nClick Your VPCs. Click on Lab VPC. Click Actions. Click Delete VPC. In the confirm box, enter delete to confirm, click Delete to delete Lab VPC and related resources.\n"
+},
+{
+	"uri": "//localhost:1313/6-cleanup-copy/",
+	"title": "Sharing and feedback",
 	"tags": [],
 	"description": "",
 	"content": "We will take the following steps to delete the resources we created in this exercise.\nDelete EC2 instance Go to EC2 service management console\nClick Instances. Select both Public Linux Instance and Private Windows Instance instances. Click Instance state. Click Terminate instance, then click Terminate to confirm. Go to IAM service management console\nClick Roles. In the search box, enter SSM. Click to select SSM-Role. Click Delete, then enter the role name SSM-Role and click Delete to delete the role. Click Users. Click on user Portfwd. Click Delete, then enter the user name Portfwd and click Delete to delete the user. Delete S3 bucket Access System Manager - Session Manager service management console.\nClick the Preferences tab. Click Edit. Scroll down. In the section S3 logging. Uncheck Enable to disable logging. Scroll down. Click Save. Go to S3 service management console\nClick on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 ) Click Empty. Enter permanently delete, then click Empty to proceed to delete the object in the bucket. Click Exit. After deleting all objects in the bucket, click Delete\nEnter the name of the S3 bucket, then click Delete bucket to proceed with deleting the S3 bucket. Delete VPC Endpoints Go to VPC service management console Click Endpoints. Select the 4 endpoints we created for the lab including SSM, SSMMESSAGES, EC2MESSAGES, S3GW. Click Actions. Click Delete VPC endpoints. In the confirm box, enter delete.\nClick Delete to proceed with deleting endpoints. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.\nDelete VPC Go to VPC service management console\nClick Your VPCs. Click on Lab VPC. Click Actions. Click Delete VPC. In the confirm box, enter delete to confirm, click Delete to delete Lab VPC and related resources.\n"

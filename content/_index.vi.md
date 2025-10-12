@@ -4,19 +4,44 @@ date :  "2025-09-09"
 weight : 1 
 chapter : false
 ---
-# Làm việc với Amazon System Manager - Session Manager
+<div align="center">
 
-### Tổng quan
+# Báo cáo Thực tập
 
- Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Amazon System Manager - Session Management. Thực hành tạo kết nối đến máy chủ public và máy chủ private trong VPC.
+</div>
 
-![ConnectPrivate](/images/arc-log.png) 
+## Thông tin Sinh viên
 
-### Nội dung
+**Họ và tên:** Lương Nguyễn Duy Khang  
 
- 1. [Giới thiệu](1-introduce/)
- 2. [Các bước chuẩn bị](2-Prerequiste/)
- 3. [Tạo kết nối đến máy chủ EC2](3-Accessibilitytoinstance/)
- 4. [Quản lý session logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
- 6. [Dọn dẹp tài nguyên](6-cleanup/)
+**Số điện thoại:** 0931984914  
+
+**Email:** lndkhang278@gmail.com  
+
+**Trường đại học:** FPT University  
+
+**Chuyên ngành:** Software Engineer 
+
+**Lớp:**   
+
+**Công ty thực tập:** Amazon Web Services Vietnam Co., Ltd.  
+
+**Vị trí thực tập:** FCJ Cloud Intern  
+
+**Thời gian thực tập:** From 12/08/2025 to 12/11/2025  
+
+---
+
+![Ảnh avatar của bạn](/images/hinhthe.png)
+
+---
+
+## Report Content
+
+1. [Worklog](#)
+2. [Proposal](#)
+3. [Translated Blogs](#)
+4. [Events Participated](#)
+5. [Workshop](#)
+6. [Self-evaluation](#)
+7. [Sharing and Feedback](#)
