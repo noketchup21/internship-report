@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2. </b> "
 ---
 
-# Nhật ký tuần 2
+# Nhật ký CÔNG VIỆC
 
 ## Mục tiêu tuần 2
 - Học và thực hành các dịch vụ lưu trữ và cơ sở dữ liệu của AWS (Amazon S3, Amazon RDS).  

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3. </b> "
 ---
 
-# Nhật ký tuần 3
+# Nhật ký CÔNG VIỆC
 
 ## Mục tiêu tuần 3
 - Thiết lập dự án cơ bản cho phát triển backend.  
