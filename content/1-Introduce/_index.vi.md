@@ -10,7 +10,7 @@ pre : " <b> 1. </b> "
 - **Tuần 3:** [Thiết lập dự án backend, phát triển chức năng xác thực (đăng ký, đăng nhập, JWT) và thực hành với Route 53, EC2 Auto Scaling, cùng AWS CLI.](Week3/_index.vi.md)  
 - **Tuần 4:** [Nâng cấp hệ thống xác thực và tích hợp thanh toán MoMo cùng Cloudinary, đồng thời thực hành các dịch vụ AWS cơ bản.](Week4/_index.vi.md)  
 - **Tuần 5:** [Tìm hiểu các dịch vụ AWS nâng cao và tích hợp OAuth 2, MoMo IPN, cùng Amazon S3 vào dự án.](Week5/_index.vi.md)  
-- **Tuần 6:** [Thực hiện nhiệm vụ E…](#)  
+- **Tuần 6:** [Tập trung vào việc tích hợp Amazon S3 và API GHTK, hoàn thành các bài lab AWS, nghiên cứu kiến trúc bảo mật và chuẩn bị cho bài kiểm tra giữa kỳ.](Week6/_index.vi.md)  
 - **Tuần 7:** [Thực hiện nhiệm vụ G…](#)  
 - **Tuần 8:** [Thực hiện nhiệm vụ H…](#)  
 - **Tuần 9:** [Thực hiện nhiệm vụ I…](#)  
