@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.149.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Blog 2 :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1762092521" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1762092521" rel="stylesheet">
+    <link href="/css/hybrid.css?1762092521" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1762092521" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1762092521" rel="stylesheet">
+    <link href="/css/auto-complete.css?1762092521" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1762092521" rel="stylesheet">
+    <link href="/css/theme.css?1762092521" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1762092521" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1762092521" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1762092521"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-accessibilitytoinstances/blog2/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1762092521"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1762092521"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1762092521"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/" title="Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/">
+           <b> 1. </b> Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week1/" title="WEEK 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week1/">
+           <b> 1. </b> WEEK 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week2/" title="WEEK 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week2/">
+           <b> 2. </b> WEEK 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week3/" title="WEEK 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week3/">
+           <b> 3. </b> WEEK 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week4/" title="WEEK 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week4/">
+           <b> 4. </b> WEEK 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week5/" title="WEEK 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week5/">
+           <b> 5. </b> WEEK 5
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week6/" title="WEEK 6" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week6/">
+           <b> 6. </b> WEEK 6
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week7/" title="WEEK 7" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week7/">
+           <b> 7. </b> WEEK 7
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/" title="Proposal " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/">
+           <b> 2. </b> Proposal 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/">
+           <b> 2.1 </b> Preparing VPC and EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.1-createvpc/" title="Create VPC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/">
+           <b> 2.1.1 </b> Create VPC
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/" title="Create Public Subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/">
+           <b> 2.1.2 </b> Create Public Subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/" title="Create Private Subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/">
+           <b> 2.1.3 </b> Create Private Subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Create security groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/">
+           <b> 2.1.4 </b> Create security groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/" title="Create Public instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/">
+           <b> 2.1.5 </b> Create Public instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/" title="Create Private Instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/">
+           <b> 2.1.6 </b> Create Private Instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.2-createiamrole/">
+           <b> 2.2 </b> Create IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-accessibilitytoinstances/" title="Translated blogs" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-accessibilitytoinstances/">
+           <b> 3. </b> Translated blogs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-accessibilitytoinstances/blog1/" title="Blog 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-accessibilitytoinstances/blog1/">
+           <b> 1. </b> Blog 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-accessibilitytoinstances/blog2/" title="Blog 2" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-accessibilitytoinstances/blog2/">
+           <b> 2. </b> Blog 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-accessibilitytoinstances/blog3/" title="Blog 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-accessibilitytoinstances/blog3/">
+           <b> 3. </b> Blog 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-s3log/" title="Events participated" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-s3log/">
+           <b> 4. </b> Events participated
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-s3log/4.1-updateiamrole/" title="Update IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-s3log/4.1-updateiamrole/">
+           <b> 4.1 </b> Update IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-s3log/4.2-creates3bucket/">
+           <b> 4.2 </b> Create S3 Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-s3log/4.3-creategwes3/" title="Create S3 Gateway endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-s3log/4.3-creategwes3/">
+           <b> 4.3 </b> Create S3 Gateway endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-s3log/4.4-configsessionlogs/" title="Monitor session logs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-s3log/4.4-configsessionlogs/">
+           <b> 4.4 </b> Monitor session logs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-portfwd/" title="Workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-portfwd/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-cleanup/" title="Self-assessment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-cleanup/">
+          <b>6. </b>Self-assessment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-cleanup-copy/" title="Sharing and feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-cleanup-copy/">
+          <b>7. </b>Sharing and feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-accessibilitytoinstances/blog2/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/3-accessibilitytoinstances/blog2/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Session Management</a> > <a href='/3-accessibilitytoinstances/'>Translated blogs</a> > Blog 2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#build-resilient-generative-ai-agents">Build resilient generative AI agents</a>
+      <ul>
+        <li><a href="#generative-ai-agent-resilience-risk-dimensions">Generative AI agent resilience risk dimensions</a></li>
+        <li><a href="#top-5-resilience-problems-for-agents-and-mitigation-plans">Top 5 resilience problems for agents and mitigation plans</a></li>
+        <li><a href="#operational-excellence-integrating-traditional-and-ai-specific-practices">Operational excellence: Integrating traditional and AI-specific practices</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#yiwen-zhang">Yiwen Zhang</a></li>
+        <li><a href="#hechmi-khelifi">Hechmi Khelifi</a></li>
+        <li><a href="#jennifer-moran">Jennifer Moran</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Blog 2
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="build-resilient-generative-ai-agents">Build resilient generative AI agents</h2>
+<p>Generative AI agents in production environments demand resilience strategies that go beyond traditional software patterns. AI agents make autonomous decisions, consume substantial computational resources, and interact with external systems in unpredictable ways. These characteristics create failure modes that conventional resilience approaches might not address.</p>
+<p>This post presents a framework for AI agent resilience risk analysis that applies to most AI developments and deployment architectures. We also explore practical strategies to help prevent, detect, and mitigate the most common resilience challenges when deploying and scaling AI agents.</p>
+<hr>
+<h3 id="generative-ai-agent-resilience-risk-dimensions">Generative AI agent resilience risk dimensions</h3>
+<p>To identify resilience risks, we break down the generative AI agent systems into seven dimensions:</p>
+<ul>
+<li><strong>Foundation models</strong> – Foundation models (FMs) provide core reasoning and planning capabilities. Your deployment choice determines your resilience responsibilities and costs. The three deployment approaches are fully self-managed such as using <a href="https://aws.amazon.com/ec2/">Amazon Elastic Compute Cloud (Amazon EC2)</a>, server-based managed services such as using <a href="https://aws.amazon.com/sagemaker-ai/">Amazon SageMaker AI</a>, or serverless managed services such as <a href="https://aws.amazon.com/bedrock/">Amazon Bedrock</a>.</li>
+<li><strong>Agent orchestration</strong> – This component controls how multiple AI agents and tools coordinate to achieve complex goals, containing logic for tool selection, human escalation triggers, and multi-step workflow management.</li>
+<li><strong>Agent deployment infrastructure</strong> – The infrastructure encompasses the underlying hardware and system where agents run. The infrastructure options include using fully self-managed EC2 instances, managed services such as <a href="https://aws.amazon.com/ecs/">Amazon Elastic Container Services (Amazon ECS)</a>, and specialized managed services designed specifically for agent deployment, such as <a href="https://aws.amazon.com/bedrock/agentcore/">Amazon Bedrock AgentCore Runtime</a>.</li>
+<li><strong>Knowledge base</strong> – The knowledge base includes vector database storage, embedding models, and data pipelines that create vector embeddings, forming the foundation for Retrieval Augmented Generation (RAG) applications. <a href="https://aws.amazon.com/bedrock/knowledge-bases/">Amazon Bedrock Knowledge Bases</a> supports fully managed RAG workflows.</li>
+<li><strong>Agent tools</strong> – This includes API tools, Model Context Protocol (MCP) servers, memory management, and prompt caching features that extend agent capabilities.</li>
+<li><strong>Security and compliance</strong> – This component encompasses user and agent security controls as well as content compliance monitoring, supporting proper authentication, authorization, and content validation. Security includes inbound authentication that manages users’ access to agents, and outbound authentication and authorization that manages agents’ access to other resources. Outbound authorization is more complex because agents <a href="https://blog.christianposta.com/agent-identity-impersonation-or-delegation/">might require their own identity</a>. <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html">Amazon Bedrock AgentCore Identity</a> is the identity and credential management service designed specifically for AI agents, providing inbound and outbound authentication and authorization capabilities. To help prevent compliance violations, organizations should establish comprehensive responsible AI policies. <a href="https://aws.amazon.com/bedrock/guardrails/">Amazon Bedrock Guardrails</a> provides configurable safeguards for responsible AI policy implementation.</li>
+<li><strong>Evaluation and observability</strong> – These systems track metrics from basic infrastructure statistics to detailed AI-specific traces, including ongoing performance evaluation and detection of behavioral deviations. Agent evaluation and observability requires a combination of traditional system metrics and agent-specific signals, such as reasoning traces and tool invocation results.</li>
+</ul>
+<p>The following diagram illustrates these dimensions.</p>
+<p><img src="/images/ARCH-1228-arch-diag.png" alt="Figure 1"></p>
+<p>This configuration provides visibility into agent applications, enabling subsequent sessions to deliver targeted resilience analysis and mitigation recommendations.</p>
+<hr>
+<h3 id="top-5-resilience-problems-for-agents-and-mitigation-plans">Top 5 resilience problems for agents and mitigation plans</h3>
+<p>The <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/resilience-analysis-framework/introduction.html">Resilience Analysis Framework</a> defines fundamental failure modes that production systems should avoid. In this post, we identify generative AI agents’ five primary failure modes and provide strategies that can help establish resilient properties.</p>
+<h4 id="shared-fate">Shared fate</h4>
+<p>Shared fate occurs when a failure in one agent component cascades across system boundaries, affecting the entire agent. Fault isolation is the desired property. To achieve fault isolation, you must understand how agent components interact and identify their shared dependencies.</p>
+<p>The relationship between FMs, knowledge bases, and agent orchestration requires clear isolation boundaries. For example, in RAG applications, knowledge bases might return irrelevant search results. Implementing guardrails with relevance checks can help prevent these query errors from cascading through the rest of the agent workflow.</p>
+<p>Tools should align with fault isolation boundaries to contain impact in case of failure. When building custom tools, design each tool as its own containment domain. When using MCP servers or existing tools, make sure you use strict, versioned request/response schemas and validate them at the boundary. Add semantic validations such as date ranges, cross-field rules, and data freshness checks. Internal tools can also be deployed across different AWS Availability Zones for additional resilience.</p>
+<p>At the orchestration dimension, implement circuit breakers that monitor failure rates and latency, activating when dependencies become unavailable. Set bounded retry limits with exponential backoff and jitter to control cost and contention. For connectivity resilience, implement robust JSON-RPC error mapping and per-call timeouts, and maintain healthy connection pools to tools, MCP servers, and downstream services. The orchestration dimension should also manage contract-compatible fallbacks—routing from a failed tool or MCP server to alternatives—while maintaining consistent schemas and providing degraded functionality.</p>
+<p>When isolation boundaries fail, you can implement graceful degradation that maintains core functionality while advanced features become unavailable. Conduct resilience testing with AI-specific failure injection, such as simulating model inference failures or knowledge base inconsistencies, to test your isolation boundaries before problems occur in production.</p>
+<h4 id="insufficient-capacity">Insufficient capacity</h4>
+<p>Excessive load can overwhelm even well-provisioned systems, potentially leading to performance degradation or system failure. Sufficient capacity makes sure your systems have the resources needed to handle both expected traffic patterns and unexpected surges in demand.</p>
+<p>AI agent capacity planning involves demand forecasting, resource assessment, and quota analysis. The primary consideration when planning capacity is estimating Requests Per Minute (RPM) and Tokens Per Minute (TPM). However, estimating RPM and TPM presents unique challenges due to the stochastic nature of agents. AI agents typically use recursive processing, where the agent’s reasoning engine repeatedly calls the FMs until reaching final answers. This creates two major planning difficulties. First, the number of iterative calls is hard to predict because it’s based on task complexity and reasoning paths. Second, each call’s token length is also hard to predict because it includes the user prompt, system instructions, agent-generated reasoning steps, and conversation history. This compounding effect makes capacity planning for agents difficult.</p>
+<p>Through heuristic analysis during development, teams can set a reasonable recursion limit to help prevent redundant loops and runaway resource consumption. Additionally, because agent outputs become inputs for subsequent recursions, managing maximum completion tokens helps control one component of the growing token consumption in recursive reasoning chains.</p>
+<p>The following equations help translate agent configurations to these capacity estimates:</p>
+<p>RPM = Average agent level thread per minute * average FM invocation per minute in one thread <br>
+= Average agent level thread per minute * (1 + 60/(max_completion_tokens/TPS))</p>
+<p>Token per second (TPS) is different for each model, and can be found in model release documentation and open source benchmark results, such as artificial analysis.</p>
+<p>TPM = RPM * Average input token length <br>
+= RPM * (system prompt length + user prompt length + max_completion_tokens * (recursion_limit -1)/recursion_limit)</p>
+<p>This calculation is assuming no prompt caching feature is implemented.</p>
+<p>Unlike external tools where resilience is managed by third-party providers, internally developed tools rely on proper configuration by the development team to scale based on demand. When resource needs spike unexpectedly, only the affected tools require scaling.</p>
+<p>For example, <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> functions can be converted to MCP-compatible tools using <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html">Amazon Bedrock AgentCore Gateway</a>. If popular tools cause Lambda functions to reach capacity limits, you can increase the account-level concurrent execution limit or implement provisioned concurrency to handle the increased load.</p>
+<p>For scenarios involving multiple action groups executing simultaneously, Lambda functions’ reserved concurrency controls provide essential resource isolation by allocating dedicated capacity to each action group. This helps prevent a single tool from consuming all available resources during orchestrated invocations, facilitating resource availability for high-priority functions.</p>
+<p>When capacity limits are reached, you can use intelligent request queuing with priority-based allocation to make sure essential services continue operating. Implementing graceful degradation during high-load periods can be helpful. This maintains core functionality while temporarily reducing non-essential features.</p>
+<h4 id="excessive-latency">Excessive latency</h4>
+<p>Excessive latency compromises user experience, reduces throughput, and undermines the practical value of AI agents in production. Agentic workload development requires balancing speed, cost, and accuracy. Accuracy is the cornerstone for AI agents to gain user trust. Achieving high accuracy requires allowing agents to perform multiple reasoning iterations, which inevitably creates latency challenges.</p>
+<p>Managing user expectations becomes critical—establishing service level objective (SLO) metrics before project initiation sets realistic targets for agent response times. Teams should define specific latency thresholds for different agent capabilities, such as subsecond responses for simple queries vs. longer windows for analytical tasks requiring multiple tool interactions or extensive reasoning chains. Clear communication of the expected response times helps prevent user frustration and allows for appropriate system design decisions.</p>
+<p>Prompt engineering offers the greatest opportunity for latency improvement by reducing unnecessary reasoning loops. Vague prompts take agents into extensive deliberation cycles, whereas clear instructions accelerate decision-making. Asking an agent to “approve if the use case is of strategic value” creates a complex reasoning chain. The agent must first define strategic value criteria, then evaluate which criteria apply, and finally determine significance thresholds. Conversely, clearly stating the criteria in the system prompt can largely reduce agent iterations. The following examples illustrate the difference between ambiguous and clear instructions.</p>
+<p>The following is an example of an ambiguous agent instruction:</p>
+<p>You are a generative AI use case approver.</p>
+<p>Your role is to evaluate GenAI agent build requests by carefully analyzing user-provided information and make approval decisions. Please follow the following instructions:</p>
+<p>&lt;instructions&gt;</p>
+<ol>
+<li>
+<p>Carefully analyze the information provided by the user, and collect use case information,
+such as use case sponsor, significance of the use case, and potential values that it can bring.</p>
+</li>
+<li>
+<p>Approve the use case if it has a senior sponsor and is of strategic value.</p>
+</li>
+</ol>
+<p>&lt;/instructions&gt;</p>
+<p>The following is an example of a clear, well-defined agent instruction:</p>
+<p>You are a generative AI use case approver.<br>
+Your role is to evaluate Gen AI agent build requests by carefully analyzing user-provided information and make approval decisions based on specific criteria.<br>
+Please strictly follow the following instructions:</p>
+<p>&lt;instructions&gt;</p>
+<ol>
+<li>
+<p>Carefully analyze the information provided by the user. Collect answers to the following questions:<br>
+&lt;question_1&gt;Does the use case have a business sponsor that is VP level and above?&lt;/question_1&gt;<br>
+&lt;question_2&gt;What value is this agent expected to deliver? The answer can be in the form of<br>
+number of hours per month saved on certain tasks, or additional revenue values.&lt;/question_2&gt;<br>
+&lt;question_3&gt;If the use case is external customer facing, please provide supporting information<br>
+on the demand.&lt;/question_3&gt;</p>
+</li>
+<li>
+<p>Evaluate the request against these approval criteria:<br>
+&lt;criteria_1&gt;The use case has business sponsor at VP level and above. This is a hard criteria.&lt;/criteria_1&gt;<br>
+&lt;criteria_2&gt;The use case can bring significant $ value, calculated by productivity gain or<br>
+revenue increase. This is a soft criteria.&lt;/criteria_2&gt;<br>
+&lt;criteria_3&gt;Have strong proof that the use case/feature is demanded by customers. This is a<br>
+soft criteria.&lt;/criteria_3&gt;</p>
+</li>
+<li>
+<p>Based on the evaluation, make a decision to approve or deny the use case.</p>
+</li>
+</ol>
+<ul>
+<li>Approve: If the hard criterion is met, and at least one of the soft criteria is met.</li>
+<li>Deny: The hard criterion is not met, or neither of the soft criteria is met.</li>
+</ul>
+<p>&lt;/instructions&gt;</p>
+<p>Prompt caching delivers substantial latency reductions by storing repeated prompt prefixes between requests. <a href="https://aws.amazon.com/bedrock/prompt-caching/">Amazon Bedrock prompt caching</a> can reduce latency by up to 85% for supported models, particularly benefiting agents with long system prompts and contextual information that remains stable across sessions.</p>
+<p>Asynchronous processing for agents and tools reduces latency by enabling parallel execution. Multi-agent workflows achieve dramatic speedups when independent agents execute in parallel rather than waiting for sequential completion. For agents with tools, asynchronous processing enables continued reasoning and preparation of subsequent actions while tools execute in the background, optimizing workflow by overlapping cognitive processing with I/O operations.</p>
+<p>Security and compliance checks must minimize latency impact while maintaining protection across dimensions. Content moderation agents implement streaming compliance scanning that evaluates agent outputs during generation rather than waiting for complete responses, flagging potentially problematic content in real time while allowing safe content to flow through immediately.</p>
+<h4 id="incorrect-agent-response">Incorrect agent response</h4>
+<p>Correct output makes sure your AI agent performs reliably within its defined scope, delivering accurate and consistent responses that meet user expectations and business requirements. However, misconfiguration, software bugs, and model hallucinations can compromise output quality, leading to incorrect responses that undermine user trust.</p>
+<p>To improve accuracy, use deterministic orchestration flows whenever possible. Letting agents rely on LLMs to improvise their way through tasks creates opportunities to deviation from your intended path. Instead, define explicit workflows that specify how agents should interact and sequence their operations. This structured approach reduces both inter-agent calling errors and tool-calling mistakes. Additionally, implementing input and output guardrails significantly enhances agent accuracy. Amazon Bedrock Guardrails can scan user input for compliance checks before model invocations, and provide output validation to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html">detect hallucinations</a>, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">harmful responses</a>, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html">sensitive information</a>, and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-denied-topics.html">blocked topics</a>.</p>
+<p>When response quality issues occur, you can deploy human-in-the-loop validation for high-stakes decisions where accuracy is essential, and implement automatic retry mechanisms with refined prompts when initial responses don’t meet quality standards.</p>
+<h4 id="single-point-of-failure">Single point of failure</h4>
+<p>Redundancy creates multiple paths to success by minimizing single points of failure that can cause system-wide impairments. Single points of failure undermine redundancy when multiple components depend on a single resource or service, creating vulnerabilities that bypass protective boundaries. Effective redundancy requires both redundant components and redundant pathways, making sure that if one component fails, alternative components can take over, and if one pathway becomes unavailable, traffic can flow through different routes.</p>
+<p>Agents require coordinated redundancy for their FMs. If the models are self-managed, you can implement multi-Region model deployment with automated failover. When using managed services, Amazon Bedrock offers cross-Region inference to provide built-in redundancy for supported models, automatically routing requests to alternative AWS Regions when primary endpoints experience issues.</p>
+<p>The agent tools dimension must coordinate tool redundancy to facilitate graceful degradation when primary tools become unavailable. Rather than failing entirely, the system should automatically route to alternative tools that provide similar functionality, even if they’re less sophisticated. For example, when the internal chat assistant’s knowledge base fails, it can fall back to a search tool to deliver alternative output to users.</p>
+<p>Maintaining permission consistency across redundant environments is essential. This helps prevent security gaps during failover scenarios. Because overly permissive access controls pose significant security risks, it’s critical to validate that both end-user permissions and tool-level access rights are identical between primary and failover components. This consistency makes sure security boundaries are maintained regardless of which environment is actively serving requests, helping prevent privilege escalation or unauthorized access that could occur when systems switch between different permission models during operational transitions.</p>
+<hr>
+<h3 id="operational-excellence-integrating-traditional-and-ai-specific-practices">Operational excellence: Integrating traditional and AI-specific practices</h3>
+<p>Operational excellence in agentic AI integrates proven DevOps practices with AI-specific requirements for running agentic systems reliably in production. Continuous integration and continuous delivery (CI/CD) pipelines orchestrate the full agent lifecycle, and infrastructure as code (IaC) standardizes deployments across environments, reducing manual error and improving reproducibility.</p>
+<p>Agent observability requires a combination of traditional metrics and agent-specific signals such as reasoning traces and tool invocation results. Although traditional system metrics and logs can be obtained from <a href="http://aws.amazon.com/cloudwatch">Amazon CloudWatch</a>, agent-level tracing requires additional software build. The recently announced <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html">Amazon Bedrock AgentCore Observability</a> (preview) supports <a href="https://opentelemetry.io/">OpenTelemetry</a> to integrate agent telemetry data with existing observability services, including CloudWatch, <a href="https://www.datadoghq.com/">Datadog</a>, <a href="https://www.langchain.com/langsmith">LangSmith</a>, and <a href="https://langfuse.com/">Langfuse</a>. For more details the Amazon Bedrock AgentCore Observability features, see <a href="https://aws.amazon.com/blogs/mt/launching-amazon-cloudwatch-generative-ai-observability-preview/">Launching Amazon CloudWatch generative AI observability</a>  (Preview).</p>
+<p>Beyond monitoring, testing and validation of agents also extend beyond conventional software practices. Automated test suites such as <a href="https://www.promptfoo.dev/">promptfoo</a> help development teams configure tests to evaluate reasoning quality, task completion, and dialogue coherence. Pre-deployment checks confirm tool connectivity and knowledge access, and fault injection simulates tool outages, API failures, and data inconsistencies to surface reasoning flaws before they affect users.</p>
+<p>When issues arise, mitigation relies on playbooks covering both infrastructure-level and agent-specific issues. These playbooks support live sessions, enabling seamless handoffs to fallback agents or human operators without losing context.</p>
+<hr>
+<h3 id="summary">Summary</h3>
+<p>In this post, we introduced a seven-dimension architecture model to map your AI agents and analyze where resilience risks emerge. We also identified five common failure modes related to AI agents, and their mitigation strategies.</p>
+<p>These strategies illustrated how resilience principles apply to common agentic workloads, but they are not exhaustive. Each AI system has unique characteristics and dependencies. You must analyze your specific architecture across the seven risk dimensions to identify the resilience challenges within your own workloads, prioritizing areas based on user impact and business criticality rather than technical complexity.</p>
+<p>Resilience represents an ongoing journey rather than a destination. As your AI agents evolve and handle new use cases, your resilience strategies must evolve accordingly. You can establish regular testing, monitoring, and improvement processes to make sure your AI systems remain resilient as they scale. For more information about generative AI agents and resilience on AWS, refer to the following resources:</p>
+<ul>
+<li><a href="https://builder.aws.com/content/2uSMnBJb3h7JxB9SkryFvXfQWk8/chaos-engineering-scenarios-for-genai-workloads">Chaos Engineering Scenarios for GenAI workloads</a></li>
+<li><a href="https://aws.amazon.com/blogs/machine-learning/designing-generative-ai-workloads-for-resilience/">Designing generative AI workloads for resilience</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/">Introducing Amazon Bedrock AgentCore: Securely deploy and operate AI agents at any scale (preview)</a></li>
+<li>Implement effective data authorization mechanisms to secure your data used in generative AI applications: <a href="https://aws.amazon.com/blogs/security/implement-effective-data-authorization-mechanisms-to-secure-your-data-used-in-generative-ai-applications/">Part 1</a> and <a href="https://aws.amazon.com/blogs/security/implement-effective-data-authorization-mechanisms-to-secure-your-data-used-in-generative-ai-applications-part-2/">Part 2</a></li>
+</ul>
+<hr>
+<h3 id="yiwen-zhang">Yiwen Zhang</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+<img src="/images/ARCH-1228-author1.jpeg" alt="Yiwen Zhang" width="150"/>
+<div>
+Yiwen Zhang is a Principal GenAI Solutions Architect at AWS. She develops both generative AI applications and enterprise integration strategies. With a PhD in computational statistics and a decade of experience developing and deploying AI/ML and data pipelines, she brings deep technical expertise to enterprise AI transformation. She focuses on making generative AI practical by establishing successful generative AI MVPs and addressing challenging questions such as ROI, AI agent performance tuning, cost management, security, and production resilience. Her goal is to help enterprises build generative AI agents into “outcome as a service” solutions.
+</div>
+</div>
+<hr>
+<h3 id="hechmi-khelifi">Hechmi Khelifi</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+  <img src="/images/hk.jpeg" alt="Hechmi Khelifi" width="150"/>
+  <div>
+Hechmi Khelifi is an Enterprise Solutions Architect at AWS, focusing on resilience and reliability. With 3+ years at AWS and a PhD from the University of Quebec, Hechmi leverages his extensive IT experience and strong academic background to help customers build robust and resilient solutions.
+  </div>
+</div>
+<hr>
+<h3 id="jennifer-moran">Jennifer Moran</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+<img src="/images/Jennifer-Moran.png" alt="Jennifer Moran" width="150"/>
+<div>
+Jennifer Moran is an AWS Senior Resilience Specialist Solutions Architect. She brings a wealth of experience from her diverse technical background, encompassing various roles across the software industry. Her expertise focuses on helping customers design resilient solutions to improve their overall resilience posture.
+</div>
+</div>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-accessibilitytoinstances/blog1/" title="Blog 1"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/3-accessibilitytoinstances/blog3/" title="Blog 3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1762092521"></script>
+    <script src="/js/perfect-scrollbar.min.js?1762092521"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1762092521"></script>
+    <script src="/js/jquery.sticky.js?1762092521"></script>
+    <script src="/js/featherlight.min.js?1762092521"></script>
+    <script src="/js/highlight.pack.js?1762092521"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1762092521"></script>
+    <script src="/js/learn.js?1762092521"></script>
+    <script src="/js/hugo-learn.js?1762092521"></script>
+
+    <link href="/mermaid/mermaid.css?1762092521" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1762092521"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

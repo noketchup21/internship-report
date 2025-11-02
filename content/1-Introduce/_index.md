@@ -12,7 +12,7 @@ pre : " <b> 1. </b> "
 - **Week 4:** [Improving backend authentication and integrating MoMo payment and Cloudinary while practicing core AWS services.](Week4/_index.md)  
 - **Week 5:** [Exploring advanced AWS services and integrating OAuth 2, MoMo IPN, and Amazon S3 into the project.](Week5/_index.md)  
 - **Week 6:** [Focusing on integrating Amazon S3 and the GHTK API, completing AWS labs, studying secure architectures, and preparing for the midterm exam.](Week6/_index.md)  
-- **Week 7:** [Doing task G…](#)  
+- **Week 7:** [Deepening understanding of AWS architectures and services while exploring AWS Cognito for project enhancement.](Week7/_index.md)  
 - **Week 8:** [Doing task H…](#)  
 - **Week 9:** [Doing task I…](#)  
 - **Week 10:** [Doing task L…](#)  

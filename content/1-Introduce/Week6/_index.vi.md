@@ -3,7 +3,7 @@ title : "Tuần 6"
 date :  "2025-09-09" 
 weight : 1 
 chapter : false
-pre : " <b> 5. </b> "
+pre : " <b> 6. </b> "
 ---
 
 # NHẬT KÝ CÔNG VIỆC
