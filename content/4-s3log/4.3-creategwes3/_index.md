@@ -1,5 +1,5 @@
 ---
-title : "Create S3 Gateway endpoint"
+title : "Event 3"
 date : "2025-09-09"
 weight : 3
 chapter : false

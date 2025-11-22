@@ -1,5 +1,5 @@
 ---
-title : "sự kiện đã tham gia"
+title : "Sự kiện đã tham gia"
 date :  "2025-09-09" 
 weight : 4 
 chapter : false

@@ -28,6 +28,13 @@
 	"content": "Create VPC Lab VPC Go to VPC service management console Click Your VPC. Click Create VPC. At the Create VPC page. In the Name tag field, enter Lab VPC. In the IPv4 CIDR field, enter: 10.10.0.0/16. Click Create VPC. "
 },
 {
+	"uri": "//localhost:1313/4-s3log/4.1-updateiamrole/",
+	"title": "Event 1",
+	"tags": [],
+	"description": "",
+	"content": "For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.\nUpdate IAM Role Go to IAM service management console Click Roles. In the search box, enter SSM. Click on the SSM-Role role. Click Attach policies. In the Search box enter S3. Click the policy AmazonS3FullAccess. Click Attach policy. In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy AmazonS3FullAccess for convenience.\nNext, we will proceed to create an S3 bucket to store session logs.\n"
+},
+{
 	"uri": "//localhost:1313/2-prerequiste/2.1-createec2/",
 	"title": "Preparing VPC and EC2",
 	"tags": [],
@@ -40,13 +47,6 @@
 	"tags": [],
 	"description": "",
 	"content": "\rINTERNSHIP REPORT Student Information Full Name: Lương Nguyễn Duy Khang\nPhone Number: 0931984914\nEmail: lndkhang278@gmail.com\nUniversity: FPT University\nMajor: Software Engineer\nClass:\nInternship Company: Amazon Web Services Vietnam Co., Ltd.\nInternship Position: FCJ Cloud Intern\nInternship Duration: From 12/08/2025 to 12/11/2025\nReport Content Worklog Proposal Translated Blogs Events Participated Workshop Self-evaluation Sharing and Feedback Content Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
-},
-{
-	"uri": "//localhost:1313/4-s3log/4.1-updateiamrole/",
-	"title": "Update IAM Role",
-	"tags": [],
-	"description": "",
-	"content": "For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.\nUpdate IAM Role Go to IAM service management console Click Roles. In the search box, enter SSM. Click on the SSM-Role role. Click Attach policies. In the Search box enter S3. Click the policy AmazonS3FullAccess. Click Attach policy. In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy AmazonS3FullAccess for convenience.\nNext, we will proceed to create an S3 bucket to store session logs.\n"
 },
 {
 	"uri": "//localhost:1313/1-introduce/week1/",
@@ -105,11 +105,32 @@
 	"content": "WEEK 8 WORKLOG Week 8 Objectives Learn and integrate AWS Cognito into the ongoing project to implement secure user authentication. Review and strengthen understanding of AWS core services (EC2, S3, IAM, MFA, SCP, Encryption, Security Groups, NACLs, GuardDuty, Shield, WAF, Secrets Manager). Study Resilient Architectures concepts including Multi-AZ, Multi-Region, DR Strategies, Auto Scaling, Route 53, Load Balancing, Backup \u0026amp; Restore in preparation for the AWS mid-term exam. Complete sample practice exams to evaluate and improve AWS service knowledge. Task Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Learning AWS Cognito to integrate into the project - Redo labs related to EC2 and S3 services to strengthen knowledge for mid-term exam 10/27/2025 10/27/2025 AWS Study Group 3 - Start to integrate AWS Cognito into the project - Read articles and information related to IAM, MFA, SCP, and Encryption to prepare for the mid-term exam 10/28/2025 10/28/2025 AWS Study Group KungFuTech AWS Course 4 - Research about Security Groups, NACLs, GuardDuty, Shield, WAF, Secrets Manager to understand Secure Architectures - Do sample exams related to AWS services 10/29/2025 10/29/2025 AWS Study Group KungFuTech AWS Course Practice Exam 5 - Read articles related to Multi-AZ, Multi-Region, DR Strategies, Auto Scaling, Route 53, Load Balancing, Backup \u0026amp; Restore to understand Resilient Architectures - Do sample exams related to AWS services to strengthen knowledge 10/30/2025 10/30/2025 AWS Study Group KungFuTech AWS Course Practice Exam 6 - Participate in AWS mid-term exam 10/31/2025 10/31/2025 Week 8 Achievements Successfully learned how to use AWS Cognito and began integrating it into the project for authentication management. Revisited and completed multiple labs on EC2 and S3, reinforcing hands-on practical skills. Conducted extensive research on AWS security and resilience best practices, improving understanding of secure and scalable architectures. Completed several AWS practice exams, identifying areas for improvement and building exam confidence. Actively participated in the AWS mid-term exam, applying knowledge to practical and test-based scenarios. "
 },
 {
+	"uri": "//localhost:1313/1-introduce/week9/",
+	"title": "WEEK 9",
+	"tags": [],
+	"description": "",
+	"content": "WEEK 9 WORKLOG Week 9 Objectives Continue integrating AWS Cognito into the project for user authentication and data storage. Learn and practice Disaster Recovery (DR) strategies using AWS Elastic Disaster Recovery. Study methods to optimize system performance using AWS services. Learn and implement Serverless Automation using AWS Lambda. Fix existing Redis-related issues in the project to ensure stability and performance. Task Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Continue to integrate AWS Cognito into the project - Read articles to learn about Disaster Recovery and how to do it with AWS Elastic Disaster Recovery 11/03/2025 11/03/2025 AWS Study Group 3 - Do labs about Disaster Recovery with AWS Elastic Disaster Recovery - Fix bugs related to Redis in the project 11/04/2025 11/04/2025 AWS Study Group 4 - Successfully integrated AWS Cognito into the project for sign-up/login and saved data to AWS user pools - Continued improving by saving basic user information to the local database 11/05/2025 11/05/2025 AWS Study Group 5 - Read articles about optimizing the system using AWS - Learned how to save basic user information when signing up/login with AWS Cognito to local database 11/06/2025 11/06/2025 AWS Study Group 6 - Read about Serverless Automation with AWS Lambda - Completed the lab of Serverless Automation with AWS Lambda - Continued studying AWS services used in the final project for integration 11/07/2025 11/07/2025 AWS Study Group Week 9 Achievements Successfully completed AWS Cognito integration, enabling user sign-up/login and saving user information to AWS user pools and the local database. Gained hands-on experience with AWS Elastic Disaster Recovery, learning how to protect and recover workloads efficiently. Resolved Redis-related bugs, improving system stability and performance. Studied and applied system optimization techniques using AWS best practices. Learned and completed Serverless Automation with AWS Lambda, enhancing automation and serverless workflow skills. Strengthened overall understanding of AWS services relevant to the final project and prepared for future integrations. "
+},
+{
 	"uri": "//localhost:1313/1-introduce/",
 	"title": "Worklog",
 	"tags": [],
 	"description": "",
-	"content": " Week 1: Getting familiar with AWS and basic AWS services. Week 2: Learning core AWS services (S3, RDS, CloudWatch, Lightsail, EC2 Auto Scaling) and practicing backend setup with Spring Boot and PostgreSQL. Week 3: Setting up the backend project, implementing authentication (register, login, JWT), and practicing with Route 53, EC2 Auto Scaling, and AWS CLI. Week 4: Improving backend authentication and integrating MoMo payment and Cloudinary while practicing core AWS services. Week 5: Exploring advanced AWS services and integrating OAuth 2, MoMo IPN, and Amazon S3 into the project. Week 6: Focusing on integrating Amazon S3 and the GHTK API, completing AWS labs, studying secure architectures, and preparing for the midterm exam. Week 7: Deepening understanding of AWS architectures and services while exploring AWS Cognito for project enhancement. Week 8: Doing task H… Week 9: Doing task I… Week 10: Doing task L… Week 11: Doing task M… Week 12: Doing task N… "
+	"content": " Week 1: Getting familiar with AWS and basic AWS services. Week 2: Learning core AWS services (S3, RDS, CloudWatch, Lightsail, EC2 Auto Scaling) and practicing backend setup with Spring Boot and PostgreSQL. Week 3: Setting up the backend project, implementing authentication (register, login, JWT), and practicing with Route 53, EC2 Auto Scaling, and AWS CLI. Week 4: Improving backend authentication and integrating MoMo payment and Cloudinary while practicing core AWS services. Week 5: Exploring advanced AWS services and integrating OAuth 2, MoMo IPN, and Amazon S3 into the project. Week 6: Focusing on integrating Amazon S3 and the GHTK API, completing AWS labs, studying secure architectures, and preparing for the midterm exam. Week 7: Deepening understanding of AWS architectures and services while exploring AWS Cognito for project enhancement. Week 8: Strengthened AWS knowledge by studying secure and resilient architectures, practicing EC2 and S3 labs, integrating AWS Cognito, and completing the AWS midterm exam. Week 9: Enhanced AWS project by finalizing Cognito integration, practicing Disaster Recovery with AWS Elastic Disaster Recovery, learning system optimization, and automating workflows using AWS Lambda. Week 10: Strengthened Cognito integration, retrieved user attributes, resolved token issues, and improved system monitoring through CloudWatch and Grafana labs. Week 11: Advanced user management by syncing user updates between Cognito and the local database, completed AWS resource-management labs, and prepared secure logout implementation. Week 12: Doing task N… "
+},
+{
+	"uri": "//localhost:1313/1-introduce/week10/",
+	"title": "WEEK 10",
+	"tags": [],
+	"description": "",
+	"content": "WEEK 10 WORKLOG Week 10 Objectives Learn AWS Cognito Identity Provider and prepare integration for Google Login. Study how to retrieve Cognito user attributes into the local database after registration. Explore methods to extract authenticated user information from Cognito. Resolve issues related to AWS Cognito tokens. Map Cognito token expiration to backend-generated tokens. Complete advanced monitoring labs using CloudWatch and Grafana. Task Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Learn about Identity Provider in AWS Cognito and plan Google Login integration 11/10/2025 11/10/2025 AWS Study Group 3 - Learn how to retrieve Cognito user info to local DB - Complete Advanced Monitoring with CloudWatch \u0026amp; Grafana 11/11/2025 11/11/2025 AWS Study Group 4 - Implement methods to retrieve user information after Cognito authentication 11/12/2025 11/12/2025 5 - Successfully retrieve user info (name, email) to local DB - Fix token-related issues in Cognito flow 11/13/2025 11/13/2025 6 - Map Cognito token expiration to backend token expiration - Complete CloudWatch Advanced Workshop 11/14/2025 11/14/2025 AWS Study Group Week 10 Achievements Learned Cognito Identity Providers and prepared Google Login integration. Retrieved basic Cognito user information (name, email) into the local database. Implemented multiple methods to fetch user data after authentication. Fixed errors related to AWS Cognito tokens. Successfully mapped Cognito token expiration with backend token logic. Completed CloudWatch Advanced and Grafana monitoring labs, improving system observability and monitoring skills. "
+},
+{
+	"uri": "//localhost:1313/1-introduce/week11/",
+	"title": "WEEK 11",
+	"tags": [],
+	"description": "",
+	"content": "WEEK 11 WORKLOG Week 11 Objectives Attend AWS Cloud Mastery #2 event at the AWS Office. Write a reflection paper for AWS Cloud Mastery #1. Complete labs on Resource Organization with Tags \u0026amp; Resource Groups. Complete lab on IAM \u0026amp; Resource Tag–based Access Control. Complete Systems Manager lab for automation and configuration. Develop API functionality to update user attributes in both local DB and AWS Cognito. Collaborate with the front-end team on feature alignment. Research secure logout implementation for Cognito users. Task Carried Out This Week Day Task Start Date Completion Date Reference Material 2 - Attend AWS Cloud Mastery #2 event - Write reflection paper for Cloud Mastery #1 11/17/2025 11/17/2025 3 - Complete lab on Resource Organization with Tags \u0026amp; Resource Groups - Complete IAM Tag-based Access Control lab 11/18/2025 11/18/2025 AWS Study Group 4 - Complete Systems Manager lab - Work on updating user attributes in local DB \u0026amp; Cognito 11/19/2025 11/19/2025 AWS Study Group 5 - Continue API development for updating user attributes - Team meeting with front-end team 11/20/2025 11/20/2025 6 - Continue API development for user attribute updates - Research Cognito logout implementation 11/21/2025 11/21/2025 Week 11 Achievements Attended AWS Cloud Mastery #2 and learned best practices for cloud architecture. Completed reflection paper for Cloud Mastery #1. Finished labs on Resource Tags, Resource Groups, and IAM Tag-based Permissions. Completed AWS Systems Manager lab, strengthening automation and operations knowledge. Made major progress on API to update user attributes in both Cognito and the local DB. Coordinated with front-end team to ensure consistent user management workflow. Researched secure logout options for Cognito, preparing for proper session handling. "
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.2-createiamrole/",
@@ -127,7 +148,7 @@
 },
 {
 	"uri": "//localhost:1313/4-s3log/4.2-creates3bucket/",
-	"title": "Create S3 Bucket",
+	"title": "Event 2",
 	"tags": [],
 	"description": "",
 	"content": "In this step, we will create an S3 bucket to store session logs sent from EC2 instances.\nCreate S3 Bucket Access S3 service management console Click Create bucket. At the Create bucket page. In the Bucket name field, enter the bucket name lab-yourname-bucket-0001 In the Region section, select Region you are doing the current lab. The name of the S3 bucket must not be the same as all other S3 buckets in the system. You can substitute your name and enter a random number when generating the S3 bucket name.\nScroll down and click Create bucket. When we created the S3 bucket we did Block all public access so our EC2 instances won\u0026rsquo;t be able to connect to S3 via the internet. In the next step, we will configure the S3 Gateway Endpoint feature to allow EC2 instances to connect to the S3 bucket via the VPC\u0026rsquo;s internal network.\n"
@@ -148,7 +169,7 @@
 },
 {
 	"uri": "//localhost:1313/4-s3log/4.3-creategwes3/",
-	"title": "Create S3 Gateway endpoint",
+	"title": "Event 3",
 	"tags": [],
 	"description": "",
 	"content": " Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter S3GW. In the Service Category section, click AWS services. In the search box enter S3, then select com.amazonaws.[region].s3 In the Services section, select com.amazonaws.[region].s3 with the Type of Gateway. In the VPC section, select Lab VPC. In the Route tables section, select both route tables. Scroll down, click Create endpoint. The next step is to configure Session Manager to store session logs to the S3 bucket we created.\n"
@@ -173,13 +194,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "//localhost:1313/4-s3log/4.4-configsessionlogs/",
-	"title": "Monitor session logs",
-	"tags": [],
-	"description": "",
-	"content": "Monitor session logs Access System Manager - Session Manager service management console Click the Preferences tab. Click Edit. Scroll down, at S3 logging, click Enable. Uncheck Allow only encrypted S3 buckets. Click Choose a bucket name from the list. Select the S3 bucket you created. Scroll down, click Save to save the configuration.\nAccess System Manager - Session Manager service management console\nClick Start session. Click Private Windows Instance. Click Start session. Type the command ipconfig. Type the command hostname. Click Terminate to exit the session, click Terminate again to confirm. Check Session logs in S3 Go to S3 service management console Click on the name of the S3 bucket we created for the lab. Click on the object name sessions log On the objects detail page, click Open. Object logs will be opened in a new tab in the browser. You can view the stored commands in session logs. "
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.1-createec2/2.1.5-createec2linux/",
