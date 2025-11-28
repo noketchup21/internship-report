@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.149.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Blog 3 :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1764318283" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1764318283" rel="stylesheet">
+    <link href="/css/hybrid.css?1764318283" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1764318283" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1764318283" rel="stylesheet">
+    <link href="/css/auto-complete.css?1764318283" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1764318283" rel="stylesheet">
+    <link href="/css/theme.css?1764318283" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1764318283" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1764318283" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1764318283"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-translatedblog/blog3/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1764318283"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1764318283"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1764318283"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/" title="Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/">
+           <b> 1. </b> Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week1/" title="WEEK 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week1/">
+           <b> 1. </b> WEEK 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week2/" title="WEEK 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week2/">
+           <b> 2. </b> WEEK 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week3/" title="WEEK 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week3/">
+           <b> 3. </b> WEEK 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week4/" title="WEEK 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week4/">
+           <b> 4. </b> WEEK 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week5/" title="WEEK 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week5/">
+           <b> 5. </b> WEEK 5
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week6/" title="WEEK 6" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week6/">
+           <b> 6. </b> WEEK 6
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week7/" title="WEEK 7" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week7/">
+           <b> 7. </b> WEEK 7
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week8/" title="WEEK 8" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week8/">
+           <b> 8. </b> WEEK 8
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week9/" title="WEEK 9" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week9/">
+           <b> 9. </b> WEEK 9
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week10/" title="WEEK 10" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week10/">
+           <b> 10. </b> WEEK 10
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week11/" title="WEEK 11" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week11/">
+           <b> 11. </b> WEEK 11
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/week12/" title="WEEK 12" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/week12/">
+           <b> 12. </b> WEEK 12
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/" title="Proposal " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/">
+           <b> 2. </b> Proposal 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/">
+           <b> 2.1 </b> Preparing VPC and EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.1-createvpc/" title="Create VPC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.1-createvpc/">
+           <b> 2.1.1 </b> Create VPC
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/" title="Create Public Subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/">
+           <b> 2.1.2 </b> Create Public Subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/" title="Create Private Subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/">
+           <b> 2.1.3 </b> Create Private Subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Create security groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/">
+           <b> 2.1.4 </b> Create security groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/" title="Create Public instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.5-createec2linux/">
+           <b> 2.1.5 </b> Create Public instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/" title="Create Private Instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createec2/2.1.6-createec2windows/">
+           <b> 2.1.6 </b> Create Private Instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.2-createiamrole/">
+           <b> 2.2 </b> Create IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-translatedblog/" title="Translated blogs" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-translatedblog/">
+           <b> 3. </b> Translated blogs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-translatedblog/blog1/" title="Blog 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-translatedblog/blog1/">
+           <b> 1. </b> Blog 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-translatedblog/blog2/" title="Blog 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-translatedblog/blog2/">
+           <b> 2. </b> Blog 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-translatedblog/blog3/" title="Blog 3" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-translatedblog/blog3/">
+           <b> 3. </b> Blog 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-events/" title="Events participated" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-events/">
+           <b> 4. </b> Events participated
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-events/4.1-event1/" title="Event 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-events/4.1-event1/">
+           <b> 4.1 </b> Event 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-events/4.2-event2/" title="Event 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-events/4.2-event2/">
+           <b> 4.2 </b> Event 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-events/4.3-event3/" title="Event 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-events/4.3-event3/">
+           <b> 4.3 </b> Event 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-events/4.4-event4/" title="Event 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-events/4.4-event4/">
+           <b> 4.4 </b> Event 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-portfwd/" title="Workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-portfwd/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-cleanup/" title="Self-assessment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-cleanup/">
+          <b>6. </b>Self-assessment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-cleanup-copy/" title="Sharing and feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-cleanup-copy/">
+          <b>7. </b>Sharing and feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-translatedblog/blog3/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/3-translatedblog/blog3/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Session Management</a> > <a href='/3-translatedblog/'>Translated blogs</a> > Blog 3
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#seamlessly-burst-eda-jobs-to-aws-using-synopsys-cloud-hybrid-solution">Seamlessly burst EDA jobs to AWS using Synopsys Cloud Hybrid solution</a>
+      <ul>
+        <li><a href="#synopsys-cloud-hybrid-solution-bursting-eda-jobs-to-aws">Synopsys Cloud Hybrid Solution: bursting EDA jobs to AWS</a></li>
+        <li><a href="#architecture-and-components">Architecture and Components</a></li>
+        <li><a href="#setting-up-the-synopsys-cloud-hybrid-solution">Setting up the Synopsys Cloud Hybrid Solution</a></li>
+        <li><a href="#general-information-about-the-platform">General information about the platform</a></li>
+        <li><a href="#scale-testing-synopsys-hybrid-solution-on-aws">Scale-testing Synopsys Hybrid Solution on AWS</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#varun-shah">Varun Shah</a></li>
+        <li><a href="#dnyanesh-digraskar">Dnyanesh Digraskar</a></li>
+        <li><a href="#mayur-runwal">Mayur Runwal</a></li>
+        <li><a href="#xingang-zhao">Xingang Zhao</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Blog 3
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="seamlessly-burst-eda-jobs-to-aws-using-synopsys-cloud-hybrid-solution">Seamlessly burst EDA jobs to AWS using Synopsys Cloud Hybrid solution</h2>
+<p><em>This post was contributed by Varun Shah, Xingang Zhao (Synopsys), Dnyanesh Digraskar, Mayur Runwal (AWS)</em></p>
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+<div style="flex: 1;">
+<p>In this post we describe how customers can burst their Synopsys workloads to AWS using <a href="https://www.synopsys.com/blogs/chip-design/hybrid-cloud-chip-design-agility-efficiency.html">Synopsys Cloud Hybrid Solution</a>. This simplifies the workflow by eliminating the need to manually move data between on-premises storage and the cloud. Data required by a job running on AWS is incrementally cached in the background and made available to the process. Similarly, when needed, selective data that’s written by a job running in the cloud can be pushed to on-premises in real time – keeping the on-premises storage up to date.</p>
+</div>
+<img src="/images/Seamlessly-burst-EDA-jobs-to-AWS-using-Synopsys-Cloud-Hybrid-solution.png" alt="Figure 1" width="400" style="margin-top: -5px;"/>
+</div>
+<div style="margin-top: -40px;">
+<p>The semiconductor industry is experiencing explosive growth, driven by artificial intelligence (AI), high performance computing (HPC), and the proliferation of smart systems. Engineers are facing unprecedented complexity and an increasingly rapid pace of innovation. As chips become more powerful and intricate, design cycles grow longer, costs rise, and the risk of missing market windows increases. In this environment, time to market has become a critical differentiator.</p>
+</div>
+<p>Cloud-based infrastructure offers elasticity and flexibility to scale chip design operations and meet customer needs. AWS offers easy access to cloud compute resources which are optimized for EDA workloads. <a href="https://aws.amazon.com/ec2/">Amazon Elastic Compute Cloud</a> (Amazon EC2) provides access to the latest generation <a href="https://aws.amazon.com/ec2/instance-types/">processors</a> in virtually unlimited capacity, deployable across the globe. Latest generation of x86 and ARM-based instances on AWS help realize maximum performance and let customers squeeze the most out of their EDA software licenses.</p>
+<p><a href="https://www.synopsys.com/">Synopsys</a> is an AWS Partner delivering trusted and comprehensive silicon to systems design solutions for customers, from EDA to silicon IP and system verification and validation.</p>
+<p>In this post we’ll demonstrate scale-testing a set of Synopsys EDA tools on AWS and describe performance, quality of results, and turnaround time.</p>
+<h3 id="synopsys-cloud-hybrid-solution-bursting-eda-jobs-to-aws">Synopsys Cloud Hybrid Solution: bursting EDA jobs to AWS</h3>
+<p>AWS makes it easy to setup cloud compute infrastructure with its large selection of hardware and services for <a href="https://aws.amazon.com/manufacturing/semiconductor-hi-tech/">semiconductor and hi-tech</a> flows. Companies can match their compute needs with those of their time-critical workflows. At a high-level, the steps involved in bursting EDA workloads on AWS involve:</p>
+<ol>
+<li>Identifying the design blocks/jobs that need to be run on the cloud</li>
+<li>Transferring relevant data to the cloud</li>
+<li>Installing EDA application binaries and licenses on the cloud</li>
+<li>Running EDA jobs</li>
+<li>Transferring the results back to on-premises for analysis/debug/reporting</li>
+</ol>
+<p>Steps 1 &amp; 2 above can be cumbersome as packaging the right set of files, source code, libraries, dependencies, scripts etc. can take up to several weeks of time. Synopsys Cloud Hybrid Solution provides a cloud-enabled mechanism to accomplish these tasks more easily.</p>
+<h3 id="architecture-and-components">Architecture and Components</h3>
+<p><img src="/images/IMG-2025-09-23-16.23.34@2x.png" alt="Figure"></p>
+<p><em>Figure 1: Architectural diagram of Synopsys Cloud Hybrid solution with AWS used for testing described in this blog</em></p>
+<p>Figure 1 shows the high-level architecture of the Synopsys Cloud Hybrid solution. The key architectural components include:</p>
+<ol>
+<li>
+<p><strong>On-premises storage:</strong> These are the NFS mount points with design data that must be presented to the compute nodes on AWS. The hybrid solution works with any third-party or commercial ISV storage solutions.</p>
+</li>
+<li>
+<p><strong>Scheduler:</strong> The Hybrid solution works with any commercially available job schedulers like the ones in <a href="https://aws.amazon.com/pcs/">AWS Parallel Computing Service (PCS)</a>, <a href="https://aws.amazon.com/parallelcluster/">AWS ParallelCluster</a>, <a href="https://aws.amazon.com/batch/">AWS</a> Batch, or IBM LSF, UGE, Slurm, etc. The architecture diagram illustrates the use of IBM LSF multi-cluster which integrates with <a href="https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=providers-configuring-amazon-web-services-lsf-resource-connector">LSF resource connector</a> for provisioning resources on AWS.</p>
+</li>
+<li>
+<p><strong>Compute farms:</strong></p>
+<ol>
+<li><strong>On-premises:</strong> This is the datacenter with a mix of several different types of compute servers.</li>
+<li><strong>On AWS:</strong> The Amazon EC2 instances used for performing the EDA simulations. For this testing, we used 16xlarge instances with 3.5GHz CPU, with 8GB memory per vCPU. A broad range of EC2 instance types could be used, depending on the application and semiconductor design under question.</li>
+</ol>
+</li>
+<li>
+<p><strong>On Cloud NFS:</strong> For EDA jobs which write intermediate data that isn’t required on-premises, an <a href="https://aws.amazon.com/fsx/netapp-ontap/">Amazon FSx for NetApp ONTAP</a> filesystem was provisioned for use by compute resources on AWS.</p>
+</li>
+<li>
+<p><strong>Synopsys Cloud Hybrid Solution:</strong> Users install this binary on their Amazon EC2 instance and configure the data-sync to handle data movement between on-prem and AWS.</p>
+</li>
+<li>
+<p><strong>Licensing:</strong></p>
+<ol>
+<li><strong>Licenses for EDA applications:</strong> Existing EDA application licenses and license servers continue to serve licenses for jobs running on AWS. Any additional license needs can be served by Synopsys <a href="https://www.synopsys.com/blogs/chip-design/what-is-flexeda.html">FlexEDA</a> and Pay-Per-Use metered licensing.</li>
+<li><strong>License for Hybrid solution:</strong> This is a separate application that needs to be purchased by the users from Synopsys. The licensing is served from Synopsys managed network license servers.</li>
+</ol>
+</li>
+</ol>
+<h3 id="setting-up-the-synopsys-cloud-hybrid-solution">Setting up the Synopsys Cloud Hybrid Solution</h3>
+<p>The setup includes 3 main components:</p>
+<ol>
+<li><strong>Hybrid Cloud data-sync</strong>: This entails installing the Hybrid solution on a recommended instance type on AWS, configure networking to allow traffic across on-premises and AWS resources for licensing (of Hybrid Cloud solution), data storage and distributed processing, identifying NFS storage mounts on-prem that require mapping and starting the Hybrid solution to establish the data-sync mapping.</li>
+<li><strong>Network Connectivity</strong>: Dedicated network connections like <a href="https://aws.amazon.com/directconnect/">AWS DirectConnect</a> provide higher bandwidth, lower latency which makes it ideal for handling workloads with large data transfers. Alternatively, IPsec Virtual Private Network (VPN) tunnel can be used with AWS but offers less speed and reliability compared to dedicated network connections.</li>
+<li><strong>Scheduler setup</strong>: This is specific to every scheduler. For example, in the case of IBM LSF, this involves deploying LSF multi-cluster, defining participating clusters, configuring queues and verifying that clusters on AWS can be dynamically provisioned as needed.</li>
+</ol>
+<h3 id="general-information-about-the-platform">General information about the platform</h3>
+<p>With , selective data that is written by a job running on cloud, can be written back to on-premises in real time, thereby keeping the on-premises storage up to date. Note that data write-back incurs data egress charges from AWS. Temporary output data from running jobs that’s not required on-prem or large persistent output data can be directed to an NFS on-cloud. If necessary, this data can be scripted to write-back after job completion.</p>
+<p>The job scheduler should be provisioned by the customer. It then finds an appropriate compute resource, on-premises or on AWS, and the Hybrid Solution handles the data movement necessary. Synopsys Cloud Hybrid Solution has ability to configure the scheduler to automatically exhaust on-premises compute capacity first and then schedule jobs on-cloud compute nodes, or to run all jobs on cloud compute nodes depending on the application being run and size/frequency of data being shared between different workers of the application.</p>
+<h3 id="scale-testing-synopsys-hybrid-solution-on-aws">Scale-testing Synopsys Hybrid Solution on AWS</h3>
+<p>EDA jobs can be data intensive both in terms of input and output. The latency of the network and the amount of data moving back and forth can impact the performance of EDA jobs. To understand the boundaries of the Synopsys Hybrid Solution, we used six of Synopsys’ flagship applications which are essential for every semiconductor chip design process. These are:</p>
+<ul>
+<li><a href="https://www.synopsys.com/implementation-and-signoff/signoff/primelib.html">PrimeLib</a> – a library characterization and validation application</li>
+<li><a href="https://www.synopsys.com/verification/simulation/vcs.html">Synopsys VCS</a> – Simulator for verifying semiconductor designs</li>
+<li><a href="https://www.synopsys.com/implementation-and-signoff/ams-simulation/primesim-spice.html">PrimeSim SPICE</a> – GPU-accelerated SPICE Simulator for Analog, RF, and - Mixed-signal Design</li>
+<li><a href="https://www.synopsys.com/implementation-and-signoff/ams-simulation/primewave.html">Synopsys PrimeWave</a> – application for simulation setup and analysis of analog, RF, mixed-signal design, custom-digital and memory designs</li>
+<li><a href="https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html">PrimeTime</a> – static timing analysis application with fast, memory-efficient scalar and multicore computing</li>
+<li><a href="https://www.synopsys.com/ai/ai-powered-eda/dso-ai.html">Synopsys DSO.ai</a> – an AI-powered design space optimization application</li>
+</ul>
+<p>All these EDA applications have different profiles in terms of I/O patterns, amount of data generated (size and volume of files), and the amount and frequency of communication that happens between different workers of a job. Each of these applications were executed using the Synopsys Cloud Hybrid Solution with standard designs and testcases. We prioritized jobs that require high IOPs when selecting the testcases for the benchmarking exercise.</p>
+<p>We monitored several metrics and compared them between tests performed on Synopsys Cloud Solution on AWS and comparable on-premises infrastructure:</p>
+<ol>
+<li><strong>Performance</strong>: Runtime performance is a critical metric as it directly translates to time to market.</li>
+<li><strong>Quality of Results</strong> (QoR): QoR is another critical metric that cannot be compromised on.
+The applications analyze the results in terms of coverage, passing tests and regressions and the output their interpretation of the overall quality of results. For the applications tested, we expect to see same or similar QoR results between AWS and on-premises tests.</li>
+<li><strong>Setup time</strong>: If performance and QoR are reasonably on-par, then what makes Synopsys Cloud Hybrid Solution worthwhile is the time that can be saved in moving relevant data to the cloud to use AWS compute infrastructure. While it’s hard to measure this on-premises and differs greatly from one EDA flow to another, we tried to estimate this.</li>
+</ol>
+<h3 id="results">Results</h3>
+<h4 id="performance">Performance</h4>
+<p><img src="/images/IMG-2025-09-23-16.26.12@2x.png" alt="Figure">
+<em>Table 1: Performance of Synopsys applications run on Hybrid Solution with AWS vs on-premises</em></p>
+<p>We ran this baseline of tests either on-premises or on AWS depending on resource availability on premises. Table 1 shows that the overall performance of all EDA flows tested using Synopsys Cloud Hybrid Solution was comparable to – or in some cases, better than – the baseline. In the case of Hybrid Setup, the runtime includes time taken to write final output data back to on-premises storage through the Hybrid Solution. This impacts the overall performance slightly when compared to a baseline run natively on cloud like in the case of PrimeLib and VCS. The data also shows that performance was better than a baseline run on-premises for PrimeTime and PrimeSim. This is due to the availability of faster CPUs on AWS.</p>
+<p>Through understanding IO patterns (size, frequency) of different EDA applications, we identified some best practices for setting up these applications to best use the Hybrid Solution.</p>
+<h4 id="quality-of-results-qor">Quality of Results (QoR)</h4>
+<p>As expected, there was no degradation in quality of results, PPA or coverage achieved when using the Hybrid Solution. For EDA applications like VCS, PrimeSim, results matched exactly with the runs on-premises. For other EDA applications like DSO.ai, the reports, PPA and QoR is comparable.</p>
+<h4 id="setup-time">Setup Time:</h4>
+<p>Synopsys Hybrid Cloud saves up to several weeks of setup time per project by automating the manual data movement and verification of design blocks. For example, from our own internal testing of an EDA application’s QA regressions, we know that ~4 weeks of manual effort was saved because Hybrid Solution eliminated the need to lift and shift EDA workloads.</p>
+<p>Depending on the workflows, Synopsys can help in best practice recommendations on a cloud-native mode or a burst mode with Synopsys Cloud Hybrid Solution. With the true burst mode, data is written to on-cloud NFS, and then selective data is synced back to on-premises after the job completion. In this way, data egress and performance impacts are minimized. Burst mode adds huge value by incrementally moving input data as needed to the cloud for running the jobs through Hybrid Solution.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>EDA workloads demand immense computational power and seamless data access. The sheer volume of design data, coupled with the iterative and highly interdependent nature of EDA tasks, means that constant data movement between on-premises storage and cloud compute can become a slow and inefficient process.</p>
+<p><a href="https://www.synopsys.com/cloud.html">Synopsys Cloud Hybrid Solution</a> solves this problem by providing a seamless way to burst EDA jobs from on-premises to the cloud with real-time two-way data synchronization. The product was stress-tested with six of Synospys’ flagship EDA applications. We found that performance of applications in Hybrid mode was comparable to performance of an on-premises or cloud-native run all while maintaining the same Quality of Results. Data movement was invisibly handled by Synopsys Cloud Hybrid Solution which saved up to weeks of setup time.</p>
+<hr>
+<h3 id="varun-shah">Varun Shah</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+<img src="/images/IMG-2025-09-23-16.35.10@2x.png" alt="Varun Shah" width="150"/>
+<div>
+Varun Shah is on the product management team for Synopsys Cloud, responsible for technology roadmap, cloud enablement of EDA software and voice-of-customer analysis. Varun holds a master's degree in electrical engineering from the University of Missouri-Rolla and is a certified product management professional from the Kellogg School of Management.
+</div>
+</div>
+<hr>
+<h3 id="dnyanesh-digraskar">Dnyanesh Digraskar</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+  <img src="/images/dnyanesh.png" alt="Dnyanesh Digraskar" width="150"/>
+  <div>
+Dnyanesh Digraskar is a Principal HPC Partner Solutions Architect at AWS. He leads the HPC implementation strategy with AWS ISV partners to help them build scalable well-architected solutions. He has more than fifteen years of expertise in the areas of CFD, CAE, Numerical Simulations, and HPC. Dnyanesh holds a Master’s degree in Mechanical Engineering from University of Massachusetts, Amherst.
+  </div>
+</div>
+<hr>
+<h3 id="mayur-runwal">Mayur Runwal</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+<img src="/images/IMG-2025-09-23-16.35.44@2x.png" alt="Mayur Runwal" width="150"/>
+<div>
+Mayur Runwal is a Senior Solutions Architect at AWS specializing in Electronic Design Automation (EDA). He architects semiconductor design and verification workflows for AWS customers. Before joining AWS, he led IT infrastructure teams at semiconductor companies for 10 years, where he designed and implemented virtual desktop solutions. His expertise includes high-performance computing, cloud architecture, and enterprise IT solutions.
+</div>
+</div>
+<hr>
+<h3 id="xingang-zhao">Xingang Zhao</h3>
+<div style="display: flex; align-items: center; gap: 15px;">
+<img src="/images/IMG-2025-09-23-16.35.23@2x.png" alt="Xingang Zhao" width="150"/>
+<div>
+Xingang Zhao is a Technical Product Manager for Synopsys Cloud. He's responsible for the technical assessment and integration of emerging cloud services and tools on public cloud platforms to boost the performance and cost-effectiveness of EDA workloads. Xingang holds a BS in electrical engineering from Zhejiang University and is a certified product management professional from the Kellogg School of Management.
+</div>
+</div>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-translatedblog/blog2/" title="Blog 2"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-events/" title="Events participated" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1764318283"></script>
+    <script src="/js/perfect-scrollbar.min.js?1764318283"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1764318283"></script>
+    <script src="/js/jquery.sticky.js?1764318283"></script>
+    <script src="/js/featherlight.min.js?1764318283"></script>
+    <script src="/js/highlight.pack.js?1764318283"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1764318283"></script>
+    <script src="/js/learn.js?1764318283"></script>
+    <script src="/js/hugo-learn.js?1764318283"></script>
+
+    <link href="/mermaid/mermaid.css?1764318283" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1764318283"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

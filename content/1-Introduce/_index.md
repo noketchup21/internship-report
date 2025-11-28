@@ -17,4 +17,4 @@ pre : " <b> 1. </b> "
 - **Week 9:** [Enhanced AWS project by finalizing Cognito integration, practicing Disaster Recovery with AWS Elastic Disaster Recovery, learning system optimization, and automating workflows using AWS Lambda.](Week9/_index.md)  
 - **Week 10:** [Strengthened Cognito integration, retrieved user attributes, resolved token issues, and improved system monitoring through CloudWatch and Grafana labs.](Week10/_index.md)  
 - **Week 11:** [Advanced user management by syncing user updates between Cognito and the local database, completed AWS resource-management labs, and prepared secure logout implementation.](Week11/_index.md)  
-- **Week 12:** [Doing task N…](#)  
+- **Week 12:** [Improved Cognito user management, added admin controls, implemented secure logout, and prepared for AWS deployment.](Week12/_index.md)  

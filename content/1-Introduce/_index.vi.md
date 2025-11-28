@@ -16,4 +16,4 @@ pre : " <b> 1. </b> "
 - **Tuần 9:** [Phát triển dự án AWS với việc hoàn thiện tích hợp Cognito, thực hành Khôi phục sau thảm họa bằng AWS Elastic Disaster Recovery, tối ưu hệ thống và tự động hóa bằng AWS Lambda.](Week9/_index.vi.md)  
 - **Tuần 10:** [Củng cố tích hợp Cognito, lấy thuộc tính người dùng, xử lý lỗi token và tăng cường giám sát hệ thống qua các bài lab CloudWatch và Grafana.](Week10/_index.vi.md)  
 - **Tuần 11:** [Hoàn thiện quản lý người dùng bằng cách đồng bộ cập nhật giữa Cognito và cơ sở dữ liệu, hoàn thành các lab quản lý tài nguyên AWS và chuẩn bị triển khai đăng xuất an toàn.](Week11/_index.vi.md)  
-- **Tuần 12:** [Thực hiện nhiệm vụ N…](#)  
+- **Tuần 12:** [Cải thiện quản lý người dùng Cognito, thêm quyền admin, triển khai đăng xuất an toàn và chuẩn bị cho việc triển khai lên AWS.](Week12/_index.vi.md)  
