@@ -81,3 +81,6 @@ Phiên làm việc “Trụ cột Bảo mật AWS Well-Architected” đã cung 
 * **Tự động hóa là Bảo mật:** Các kiểm tra bảo mật thủ công khó mở rộng quy mô; tự động hóa sử dụng EventBridge và Lambda cho phép khắc phục theo thời gian thực.
 
 ### Ảnh sự kiện
+![Photo](/images/aws3.jpg)
+![Photo](/images/aws32.jpg)
+![Photo](/images/aws33.jpg)

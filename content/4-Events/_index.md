@@ -20,6 +20,7 @@ During my internship, I participated in four events. Each one was a memorable ex
 
 ---
 
+
 # [Event 2](4.2-Event2/_index.md)
 
 **Event Name:** AWS Cloud Mastery Series #2
@@ -30,6 +31,8 @@ During my internship, I participated in four events. Each one was a memorable ex
 
 **Role:** Attendee
 
+---
+
 # [Event 3](4.3-Event3/_index.md)
 
 **Event Name:** AWS Cloud Mastery Series #3
@@ -39,6 +42,8 @@ During my internship, I participated in four events. Each one was a memorable ex
 **Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
 **Role:** Attendee
+
+---
 
 # [Event 4](4.4-Event4/_index.md)
 

@@ -81,3 +81,6 @@ The **“AWS Well-Architected Security Pillar”** session provided a deep dive 
 * **Automation is Security:** Manual security checks scale poorly; automation using EventBridge and Lambda allows for real-time remediation.
 
 ### Event photo
+![Photo](/images/aws3.jpg)
+![Photo](/images/aws32.jpg)
+![Photo](/images/aws33.jpg)
