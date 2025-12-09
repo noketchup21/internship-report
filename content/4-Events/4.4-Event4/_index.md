@@ -84,3 +84,4 @@ The **“Agentic AI & Orchestration on AWS”** event was a comprehensive journe
 * The future of app development is **Agent-driven**, where the UI adapts to the user's intent rather than forcing the user to navigate static menus.
 
 ### Event photo
+![Photo](/images/event4.jpg)

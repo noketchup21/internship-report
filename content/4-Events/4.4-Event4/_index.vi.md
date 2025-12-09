@@ -84,3 +84,4 @@ Sự kiện **“Agentic AI & Orchestration trên AWS”** là một hành trìn
 * Tương lai của phát triển ứng dụng là định hướng Agent (Agent-driven), nơi giao diện người dùng (UI) thích ứng với ý định của người dùng thay vì buộc người dùng phải điều hướng các menu tĩnh.
   
 ### Ảnh sự kiện
+![Photo](/images/event4.jpg)

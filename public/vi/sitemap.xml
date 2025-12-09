@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/vi/5-workshop/5.1-workshop-overview/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/5.1-workshop-overview/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/5.1-workshop-overview/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-translatedblog/blog1/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -197,6 +210,19 @@
                 href="//localhost:1313/vi/1-introduce/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-workshop/5.2-prerequiste/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/5.2-prerequiste/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/5.2-prerequiste/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-proposal/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -262,6 +288,32 @@
                 href="//localhost:1313/vi/1-introduce/week12/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/1-introduce/week13/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/1-introduce/week13/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/1-introduce/week13/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/5-workshop/5.3-s3/create-s3/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/5.3-s3/create-s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/5.3-s3/create-s3/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-translatedblog/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -301,6 +353,19 @@
                 href="//localhost:1313/vi/4-events/4.4-event4/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-workshop/5.4-lambda/create-lambda/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/5.4-lambda/create-lambda/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/5.4-lambda/create-lambda/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-events/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -314,17 +379,43 @@
                 href="//localhost:1313/vi/4-events/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-portfwd/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <loc>//localhost:1313/vi/5-workshop/5.5-testing/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-portfwd/"
+                href="//localhost:1313/5-workshop/5.5-testing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-portfwd/"
+                href="//localhost:1313/vi/5-workshop/5.5-testing/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/5-workshop/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/5-workshop/5.6-cleanup/</loc>
+    <lastmod>2025-12-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-workshop/5.6-cleanup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-workshop/5.6-cleanup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/6-self-assessment/</loc>
